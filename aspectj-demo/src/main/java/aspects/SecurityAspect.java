@@ -1,4 +1,4 @@
-package aspect;
+package aspects;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class SecurityAspect {
     private String username = "root";
     private String password = "123";
 
-    @Around("call(* hattabi.youness.Main.start(..))")
+    @Around("call(* *.*.*.start(..))")
     public void secureApp(JoinPoint joinPoint, ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         Scanner scanner = new Scanner(System.in);

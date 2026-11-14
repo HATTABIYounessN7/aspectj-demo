@@ -29,7 +29,7 @@
             <plugin>
                 <groupId>dev.aspectj</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
-                <version>1.14.0</version>
+                <version>1.14</version>
                 <configuration>
                     <complianceLevel>21</complianceLevel>
                     <source>21</source>
@@ -39,15 +39,29 @@
                     <Xlint>ignore</Xlint>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
-                        <phase>process-classes</phase>
                         <goals>
                             <goal>compile</goal>
-                            <goal>test-compile</goal>
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>hattabi.youness.Main</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

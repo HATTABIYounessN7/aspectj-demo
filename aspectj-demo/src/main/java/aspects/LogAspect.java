@@ -1,4 +1,4 @@
-package aspect;
+package aspects;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
